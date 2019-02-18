@@ -12,10 +12,10 @@ public class Baza {
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			
-			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/car.db", "sa", "");
+			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
 			
 			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM klienci");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM Clients");
 			while(resultSet.next()) {
 				System.out.println(resultSet.getString("login"));
 			}

@@ -43,7 +43,7 @@ public class IssuesController {
 	@RequestMapping(path= {"/issue/{idIssue}/{test}", "/issue/{idIssue}"}, method=RequestMethod.GET)
 	@ResponseBody
 	public String testIssue(@PathVariable("idIssue") String idIssue, @PathVariable("test") Optional<String> test){
-		return "Wartoœæ zmiennej"+idIssue+ test.orElse("puste");
+		return "Wartosc zmiennej"+idIssue+ test.orElse("puste");
 	}
 	
 	@RequestMapping(path="/add", method=RequestMethod.GET)
