@@ -1,2 +1,7 @@
-.metadata
-.settings
+*.jar
+*.class
+.idea
+carrental/.classpath
+carrental/.project
+carrental/target/
+carrental/.metadata
