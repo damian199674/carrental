@@ -1,7 +1,8 @@
 *.jar
 *.class
+*.iml
 .idea
+.metadata
 carrental/.classpath
 carrental/.project
 carrental/target/
-carrental/.metadata
