@@ -1,18 +1,19 @@
-CREATE TABLE klienci(
-login VARCHAR(20) PRIMARY KEY,
-haslo VARCHAR(20) NOT NULL
+CREATE TABLE Clients(
+login VARCHAR(32) PRIMARY KEY,
+password VARCHAR(32) NOT NULL
 );
 
-CREATE TABLE samochody(
-nr_rejestracyjny VARCHAR(20) PRIMARY KEY,
-marka VARCHAR(20),
+CREATE TABLE Cars(
+id_car IDENTITY PRIMARY KEY,
+plate_number VARCHAR(8),
+mark VARCHAR(20),
 model VARCHAR(20),
-kolor VARCHAR(20),
-cenaZaH INTEGER);
+description VARCHAR(255),
+price_hour INTEGER);
 
-CREATE TABLE rezerwacje(
-id_rezerwacji INTEGER  PRIMARY KEY,
-login VARCHAR(20) REFERENCES klienci(login),
-nr_rejestracyjny VARCHAR(20) REFERENCES samochody(nr_rejestracyjny),
-dataOd DATE,
-dataDo DATE);
+CREATE TABLE Rentals(
+id_rentals INTEGER IDENTITY  PRIMARY KEY ,
+login VARCHAR(32) REFERENCES Clients(login),
+plate_number INTEGER REFERENCES Cars(id_car),
+rental_date DATE,
+return_date DATE);
