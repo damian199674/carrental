@@ -32,4 +32,12 @@ public class stronaController {
 	public String product_detail() {
 		return "product_detail";
 	}
+    @RequestMapping(path="/login", method=RequestMethod.GET)
+	public String login() {
+		return "login";
+	}
+    @RequestMapping(path="/register", method=RequestMethod.GET)
+	public String register() {
+		return "register";
+	}
 }
