@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import pl.akdg.carrental.dto.IssueForm;
 import pl.akdg.carrental.dto.RegisterForm;
@@ -44,7 +45,7 @@ public class stronaController {
 		return "product_detail";
 	}
     @RequestMapping(path="/login", method=RequestMethod.GET)
-	public String login() {
+	public String login(@SessionAttribute("login") String login) {
 		return "login";
 	}
   /*  @RequestMapping(path="/register", method=RequestMethod.GET)
