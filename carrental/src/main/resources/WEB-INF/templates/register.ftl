@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring>
+<@spring.bind "registerForm"/>
 <!doctype html>
 <html lang="en">
 
@@ -75,18 +77,22 @@ body {
             </div>
         </nav>
     </header>
-    <div class="container">
+    	<div class="container">
             <h1>Register</h1>
-            <form class="col-md-6">
+            <form class="col-md-6" action="/save" method="POST">
                 <div class="form-group">
-                    <label for="nickInput">Nickname</label>
-                    <input type="text" class="form-control" id="nickInput" placeholder="Enter nickname">
-                </div>
+                	<label for="nickInput">Nickname:</label><br/>
+	                <@spring.formInput "registerForm.nickname" /><br/>
+					<@spring.showErrors "<br/>"/><br/> 
+               </div>
+               
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
+                	<label for="exampleInputPassword1">Password:</label><br/>
+                    <@spring.formInput "registerForm.password" /><br/>
+					<@spring.showErrors "<br/>"/><br/>
+                </div>  
+         
+                <input type="submit" value="Register" />
             </form>
         </div>
     <footer class="footer">

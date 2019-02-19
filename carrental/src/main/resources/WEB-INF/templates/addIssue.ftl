@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/carrental/issue/save" method="POST">
+<form action="/issue/save" method="POST">
 <@spring.formInput "issueForm.title" /><br/>
 <@spring.showErrors "<br/>"/><br/>
 <@spring.formInput "issueForm.content" /><br/>
