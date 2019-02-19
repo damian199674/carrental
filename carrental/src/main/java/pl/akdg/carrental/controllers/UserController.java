@@ -18,6 +18,6 @@ public class UserController {
 	@ResponseBody
 	public String test(@RequestParam("login") String login, HttpServletRequest request) {
 		request.getSession().setAttribute("login", login);
-		return "Ustawi³em w sesji login: "+login;
+		return "Ustawilem w sesji login: "+login;
 	}
 }
