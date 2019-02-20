@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import pl.akdg.carrental.dto.IssueForm;
+
 import pl.akdg.carrental.dto.RegisterForm;
 
 @Controller
 @RequestMapping("/")
-public class stronaController {
+public class CarRentalController {
 
 	@RequestMapping(path="/about", method=RequestMethod.GET)
 	public String about() {
@@ -79,10 +79,10 @@ public class stronaController {
 			
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
 			PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Clients VALUES(?,?)");
-			preparedStatement.setString(0, registerForm.getNickname());
-			preparedStatement.setString(1, registerForm.getPassword());
+			preparedStatement.setString(1, registerForm.getNickname());
+			preparedStatement.setString(2, registerForm.getPassword());
 			
-			preparedStatement.executeQuery();
+			preparedStatement.executeUpdate();
 
 			preparedStatement.close();
 			Statement statement = connection.createStatement();

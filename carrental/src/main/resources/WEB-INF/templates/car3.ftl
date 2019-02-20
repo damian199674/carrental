@@ -82,15 +82,15 @@ body {
     <div class="card mb-3">
         <h5 class="card-header">Ferrari</h5>
         <div class="card-body">
-            <h5 class="card-title">Only for  $ per hour!</h5>
-            <p class="card-text">description</p>
+            <h5 class="card-title">Only for  14$ per hour!</h5>
+            <p class="card-text">The Ferrari Testarossa is a 12-cylinder mid-engine sports car manufactured by Ferrari, which went into production in 1984 as the successor to the Ferrari Berlinetta Boxer. The Pininfarina-designed car was originally produced from 1984 to 1991, with two model revisions following the end of Testarossa production dubbed the 512 TR and F512 M which were produced from 1992 to 1996. Almost 10,000 Testarossas, 512 TRs, and F512 Ms were produced, making it one of the mass-produced Ferrari models.</p>
             <strong>Car available!</strong>
             <br>
             <br>
+            <a href="/file/ferrari" class="btn btn-primary">PHOTO</a>
             <a href="#" class="btn btn-primary">Rent IT!</a>
             <br>
             <br>
-            <img class="card-img-top car-img" src="./static/img/ferrari.jpg" alt="car">
         </div>
     </div>
 </div>

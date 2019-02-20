@@ -82,15 +82,15 @@ body {
     <div class="card mb-3">
         <h5 class="card-header">Poldek</h5>
         <div class="card-body">
-            <h5 class="card-title">Only for  $ per hour!</h5>
-            <p class="card-text">description</p>
+            <h5 class="card-title">Only for  5$ per hour!</h5>
+            <p class="card-text">The FSO Polonez was a Polish motor vehicle that was produced from 1978 to 2002. The car's name comes from the Polish dance, polonaise.</p>
             <strong>Car available!</strong>
             <br>
             <br>
+            <a href="/file/poldek" class="btn btn-primary">PHOTO</a>
             <a href="#" class="btn btn-primary">Rent IT!</a>
             <br>
             <br>
-            <img class="card-img-top car-img" src="./static/img/polonez.jpg" alt="car">
         </div>
     </div>
 </div>

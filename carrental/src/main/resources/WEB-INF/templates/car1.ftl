@@ -82,15 +82,15 @@ body {
     <div class="card mb-3">
         <h5 class="card-header">Maluch</h5>
         <div class="card-body">
-            <h5 class="card-title">Only for  $ per hour!</h5>
-            <p class="card-text">description</p>
+            <h5 class="card-title">Only for  19$ per hour!</h5>
+            <p class="card-text">The Fiat 126 is a rear-engined, small economy or city car, introduced in October 1972 at the Turin Auto Show as a replacement for the Fiat 500. The majority of 126s were produced in Bielsko-Bia³a, Poland, as the Polski Fiat 126p, where production continued until year 2000.</p>
             <strong>Car available!</strong>
             <br>
             <br>
+            <a href="/file/maluch" class="btn btn-primary">PHOTO</a>
             <a href="#" class="btn btn-primary">Rent IT!</a>
             <br>
             <br>
-            <img class="card-img-top car-img" src="./static/img/maluch.jpg" alt="Maluch car">
         </div>
     </div>
 </div>

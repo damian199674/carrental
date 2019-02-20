@@ -53,6 +53,8 @@ INSERT INTO BLOCKS VALUES(0,2147483647,0)
 SET SCHEMA PUBLIC
 INSERT INTO CLIENTS VALUES('adrian','adrian')
 INSERT INTO CLIENTS VALUES('damian','damian')
+INSERT INTO CLIENTS VALUES('gosc123','gosc123')
+INSERT INTO CLIENTS VALUES('gosc234','gosc234')
 INSERT INTO CARS VALUES(1,'KR12345','Ferrari','Testarossa','The best car in our company.',14)
 INSERT INTO CARS VALUES(2,'KR23456','Polonez','FSO','The FSO Polonez was a Polish motor vehicle that was produced from 1978 to 2002.',5)
 INSERT INTO CARS VALUES(3,'KR34567','Fiat','126p','The Fiat 126 is a rear-engined, small economy or city car',19)
