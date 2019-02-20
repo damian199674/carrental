@@ -76,21 +76,25 @@ body {
         </nav>
     </header>
     <div class="container">
-        <div class="product-list-content">
-            <a href="..">Back</a>
-            <h1>Our cars</h1>
-            <ul class="list-group">
-                <a href="/cars/maluch" class="list-group-item list-group-item-action">
-                    maluch</a>
-                <a href="/cars/poldek" class="list-group-item list-group-item-action">
-                    poldek</a>
-                <a href="/cars/ferrari" class="list-group-item list-group-item-action">
-                    testarossa</a>
-                <a href="https://youtu.be/oHg5SJYRHA0" class="list-group-item list-group-item-action list-group-item-light"
-                    tabindex="-1" aria-disabled="true">...for very special clients!</a>
-            </ul>
+
+<div class="product-detail-content">
+    <a href="../">Back</a>
+    <div class="card mb-3">
+        <h5 class="card-header">Maluch</h5>
+        <div class="card-body">
+            <h5 class="card-title">Only for  $ per hour!</h5>
+            <p class="card-text">description</p>
+            <strong>Car available!</strong>
+            <br>
+            <br>
+            <a href="#" class="btn btn-primary">Rent IT!</a>
+            <br>
+            <br>
+            <img class="card-img-top car-img" src="./static/img/maluch.jpg" alt="Maluch car">
         </div>
     </div>
+</div>
+
 
     <footer class="footer">
         <div class="container">
