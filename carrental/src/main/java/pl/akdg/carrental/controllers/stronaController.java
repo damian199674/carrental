@@ -56,6 +56,18 @@ public class stronaController {
 	public String addUser(@ModelAttribute RegisterForm registerForm) {
 		return "register";
 	}
+	@RequestMapping(path="/cars/maluch", method=RequestMethod.GET)
+	public String car1() {
+		return "car1";
+	}
+    @RequestMapping(path="/cars/poldek", method=RequestMethod.GET)
+	public String car2() {
+		return "car2";
+	}
+    @RequestMapping(path="/cars/ferrari", method=RequestMethod.GET)
+	public String car3() {
+		return "car3";
+	}
 	
 	@RequestMapping(path="/save",  method=RequestMethod.POST)
 	public String saveUser(@Valid @ModelAttribute RegisterForm registerForm, BindingResult bindingResult) {
