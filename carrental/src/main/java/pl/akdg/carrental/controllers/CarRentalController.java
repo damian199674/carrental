@@ -1,5 +1,6 @@
 package pl.akdg.carrental.controllers;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,7 +9,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -53,7 +56,8 @@ public class CarRentalController {
 		return "login";
 	}
     @RequestMapping(path="/login",  method=RequestMethod.POST)
-  	public String login(@RequestParam("nick") String nick,@RequestParam("password") String password, HttpServletRequest request) {
+  	public String login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nick=request.getParameter("nick");
     	request.getSession().setAttribute("login", nick);
     	return "home";
     }
@@ -70,8 +74,30 @@ public class CarRentalController {
 	public String register() {
 		return "register";
     }
-    @RequestMapping(path="/register",  method=RequestMethod.POST)
+    /*@RequestMapping(path="/register",  method=RequestMethod.POST)
 	public String register(@RequestParam("nick") String nick, @RequestParam("password") String password) {
+    	
+    	 HttpClient httpClient = HttpClientBuilder.create().build(); //Use this instead 
+			
+			try {
+			
+			    HttpPost request = new HttpPost("http://yoururl");
+			    StringEntity params =new StringEntity("details={\"name\":\"myname\",\"age\":\"20\"} ");
+			    request.addHeader("content-type", "application/x-www-form-urlencoded");
+			    request.setEntity(params);
+			    HttpResponse response = httpClient.execute(request);
+			
+			    //handle response here...
+			
+			}catch (Exception ex) {
+			
+			    //handle exception here
+			
+			} finally {
+			    //Deprecated
+			    //httpClient.getConnectionManager().shutdown(); 
+			}
+    	 
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			
@@ -96,7 +122,36 @@ public class CarRentalController {
 			e.printStackTrace();
 		}
 		return "home";
-	}
+	}*/
+    @RequestMapping(path="/register",  method=RequestMethod.POST)
+   	public String register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    		String nick=request.getParameter("nick");
+    		String password=request.getParameter("password");
+    	try {
+   			Class.forName("org.hsqldb.jdbcDriver");
+   			
+   			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
+   			PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Clients VALUES(?,?)");
+   			preparedStatement.setString(1, nick);
+   			preparedStatement.setString(2, password);
+   			
+   			preparedStatement.executeUpdate();
+
+   			preparedStatement.close();
+   			Statement statement = connection.createStatement();
+   			statement.execute("SHUTDOWN");
+   			statement.close();
+   			connection.close();
+   			
+   		} catch (ClassNotFoundException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		} catch (SQLException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		return "home";
+   	}
 	@RequestMapping(path="/cars/maluch", method=RequestMethod.GET)
 	public String car1() {
 		return "car1";
@@ -120,12 +175,22 @@ public class CarRentalController {
 //		else
 //			return "home";
 //	}
-    
+   /* 
     @RequestMapping(path="/rentCar", method=RequestMethod.POST)
 	public String rentCar(@RequestBody String values) {
 		String[] parts=values.split("&");
 		String payment=parts[1];
 		payment=payment.substring(8);
+		if(payment.equals("przelewy24")) {
+			return "przelewy24";
+		}
+		else {
+			return "home";
+		}
+	}*/
+    @RequestMapping(path="/rentCar", method=RequestMethod.POST)
+	public String rentCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String payment=request.getParameter("payment");
 		if(payment.equals("przelewy24")) {
 			return "przelewy24";
 		}

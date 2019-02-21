@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class Data {
 	public static void main(String[] args) {
 		try {
-			Class.forName("org.hsqldb.jdbcDriver");
+			//Class.forName("org.hsqldb.jdbcDriver");
 			
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
 			
@@ -23,9 +23,9 @@ public class Data {
 			statement.close();
 			connection.close();
 			
-		} catch (ClassNotFoundException e) {
+	//	} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+		//	e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

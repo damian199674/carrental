@@ -77,11 +77,11 @@ body {
             <form class="col-md-6" action="/register" method="POST">
                 <div class="form-group">
                     <label for="nickInput">Nickname</label>
-                    <input type="text" minlength=5 class="form-control" id="nickInput" placeholder="Enter nickname" name="nick">
+                    <input type="text" minlength=5 class="form-control" placeholder="Enter nickname" name="nick">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" minlength=5 class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password">
+                    <input type="password" minlength=5 class="form-control" placeholder="Enter password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
