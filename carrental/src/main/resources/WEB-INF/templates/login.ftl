@@ -28,16 +28,13 @@ body {
   line-height: 60px;
   background-color: #f5f5f5;
 }
-
 .container {
   width: auto;
   padding: 0 15px;
 }
-
 .product-list-content {
     margin-top: 5rem;
 }
-
 .product-detail-content {
     margin-top: 5rem;
 }
@@ -69,26 +66,26 @@ body {
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <div class="container">
-        <h1>Login</h1>
-        <form class="col-md-6">
-            <div class="form-group">
-                <label for="nickInput">Nickname</label>
-                <input type="text" class="form-control" id="nickInput" placeholder="Enter nickname">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    </div>
+            <h1>LOGIN</h1>
+            <form class="col-md-6" action="/login" method="POST">
+                <div class="form-group">
+                    <label for="nickInput">Nickname</label>
+                    <input type="text" minlength=5 class="form-control" id="nickInput" placeholder="Enter nickname" name="nick">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" minlength=5 class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+            </form>
+        </div>
     <footer class="footer">
         <div class="container">
             <span class="text-muted">Car Rental App 2018-2019 &copy;.</span>
@@ -103,4 +100,4 @@ body {
         crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 

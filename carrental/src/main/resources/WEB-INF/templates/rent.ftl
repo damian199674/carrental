@@ -28,16 +28,13 @@ body {
   line-height: 60px;
   background-color: #f5f5f5;
 }
-
 .container {
   width: auto;
   padding: 0 15px;
 }
-
 .product-list-content {
     margin-top: 5rem;
 }
-
 .product-detail-content {
     margin-top: 5rem;
 }
@@ -76,26 +73,24 @@ body {
         </nav>
     </header>
     <div class="container">
-
-<div class="product-detail-content">
-    <a href="../">Back</a>
-    <div class="card mb-3">
-        <h5 class="card-header">Ferrari</h5>
-        <div class="card-body">
-            <h5 class="card-title">Only for  14$ per hour!</h5>
-            <p class="card-text">The Ferrari Testarossa is a 12-cylinder mid-engine sports car manufactured by Ferrari, which went into production in 1984 as the successor to the Ferrari Berlinetta Boxer. The Pininfarina-designed car was originally produced from 1984 to 1991, with two model revisions following the end of Testarossa production dubbed the 512 TR and F512 M which were produced from 1992 to 1996. Almost 10,000 Testarossas, 512 TRs, and F512 Ms were produced, making it one of the mass-produced Ferrari models.</p>
-            <strong>Car available!</strong>
-            <br>
-            <br>
-            <a href="/file/ferrari" class="btn btn-primary">PHOTO</a>
-            <a href="/rentCar" class="btn btn-primary">Rent IT!</a>
-            <br>
-            <br>
+            <h1>RENT OUR CAR</h1>
+            <form class="col-md-6" action="/rentCar" method="POST">
+                <div class="form-group">
+                  <label for="start">Date of rent:</label>
+				  <input type="date" id="start" name="rent_start" value="2019-02-21" min="2019-02-21" max="2019-12-31">  
+                </div>
+                <div class="form-group">
+                  <label for="return">Date of return:</label>
+				  <input type="date" id="return" name="rent_return" value="2019-02-22" min="2019-02-22" max="2019-12-31">  
+                </div>
+                <div class="form-group">
+                 <label for="payment">Payment:</label>
+                <input type="radio" name="payment" value="przelewy24">przelewy24   
+                <input type="radio" name="payment" value="cash">cash
+                  </div>
+                <button type="submit" class="btn btn-primary">RENT</button>
+            </form>
         </div>
-    </div>
-</div>
-
-
     <footer class="footer">
         <div class="container">
             <span class="text-muted">Car Rental App 2018-2019 &copy;.</span>
@@ -110,4 +105,4 @@ body {
         crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 

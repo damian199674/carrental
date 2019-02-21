@@ -1,5 +1,3 @@
-<#import "/spring.ftl" as spring>
-<@spring.bind "registerForm"/>
 <!doctype html>
 <html lang="en">
 
@@ -30,16 +28,13 @@ body {
   line-height: 60px;
   background-color: #f5f5f5;
 }
-
 .container {
   width: auto;
   padding: 0 15px;
 }
-
 .product-list-content {
     margin-top: 5rem;
 }
-
 .product-detail-content {
     margin-top: 5rem;
 }
@@ -71,28 +66,24 @@ body {
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    	<div class="container">
+    <div class="container">
             <h1>Register</h1>
-            <form class="col-md-6" action="/save" method="POST">
+            <form class="col-md-6" action="/register" method="POST">
                 <div class="form-group">
-                	<label for="nickInput">Nickname:</label><br/>
-	                <@spring.formInput "registerForm.nickname" /><br/>
-					<@spring.showErrors "<br/>"/><br/> 
-               </div>
-               
+                    <label for="nickInput">Nickname</label>
+                    <input type="text" minlength=5 class="form-control" id="nickInput" placeholder="Enter nickname" name="nick">
+                </div>
                 <div class="form-group">
-                	<label for="exampleInputPassword1">Password:</label><br/>
-                    <@spring.formInput "registerForm.password" /><br/>
-					<@spring.showErrors "<br/>"/><br/>
-                </div>  
-         
-                <input type="submit" value="Register" />
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" minlength=5 class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
             </form>
         </div>
     <footer class="footer">
@@ -109,4 +100,4 @@ body {
         crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 

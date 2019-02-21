@@ -9,16 +9,15 @@ import java.sql.Statement;
 
 public class Data {
 	public static void main(String[] args) {
-	
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
 			
 			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM Cars");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM Clients");
 			while(resultSet.next()) {
-				System.out.println(resultSet.getString("price"));
+				System.out.println(resultSet.getString("login"));
 			}
 			statement.execute("SHUTDOWN");
 			statement.close();

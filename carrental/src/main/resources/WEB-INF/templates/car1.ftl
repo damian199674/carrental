@@ -69,7 +69,7 @@ body {
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@ body {
             <br>
             <br>
             <a href="/file/maluch" class="btn btn-primary">PHOTO</a>
-            <a href="#" class="btn btn-primary">Rent IT!</a>
+            <a href="/rentCar" class="btn btn-primary">Rent IT!</a>
             <br>
             <br>
         </div>
