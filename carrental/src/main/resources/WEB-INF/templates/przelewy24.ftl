@@ -75,21 +75,8 @@ body {
             </div>
         </nav>
     </header>
-     <div class="container">
-        <div class="product-list-content">
-            <a href="..">Back</a>
-            <h1>Our cars</h1>
-            <ul class="list-group">
-                <a href="/cars/maluch" class="list-group-item list-group-item-action">
-                    maluch</a>
-                <a href="/cars/poldek" class="list-group-item list-group-item-action">
-                    poldek</a>
-                <a href="/cars/ferrari" class="list-group-item list-group-item-action">
-                    testarossa</a>
-                <a href="https://youtu.be/oHg5SJYRHA0" class="list-group-item list-group-item-action list-group-item-light"
-                    tabindex="-1" aria-disabled="true">...for very special clients!</a>
-            </ul>
-        </div>
+    <div class="container">
+        <h1>SERVICE UNAVAILABLE</h1>
     </div>
 
     <footer class="footer">

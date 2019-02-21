@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -112,12 +113,25 @@ public class CarRentalController {
 	public String rentCar() {
 		return "rent";
 	}
+//    @RequestMapping(path="/rentCar", method=RequestMethod.POST)
+//	public String rentCar(@RequestParam("rent_start") String rent_start,@RequestParam("rent_return") String rent_return, @RequestParam("payment") String payment) {
+//		if(payment=="przelewy24")
+//			return "about";
+//		else
+//			return "home";
+//	}
+    
     @RequestMapping(path="/rentCar", method=RequestMethod.POST)
-	public String rentCar(@RequestParam("rent_start") String rent_start,@RequestParam("rent_return") String rent_return, @RequestParam("payment") String payment) {
-		if(payment=="przelewy24")
-			return "about";
-		else
+	public String rentCar(@RequestBody String values) {
+		String[] parts=values.split("&");
+		String payment=parts[1];
+		payment=payment.substring(8);
+		if(payment.equals("przelewy24")) {
+			return "przelewy24";
+		}
+		else {
 			return "home";
+		}
 	}
 	/*
 	@RequestMapping(path="/save",  method=RequestMethod.POST)
