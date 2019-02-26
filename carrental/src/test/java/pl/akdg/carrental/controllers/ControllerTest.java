@@ -33,7 +33,39 @@ public class ControllerTest {
 	}
 	
 	@Test
-	public void stronaTest() throws Exception {
+	public void homeTest() throws Exception {
 		mockMvc.perform(get("/")).andExpect(status().isOk());
+	}
+	@Test
+	public void aboutTest() throws Exception {
+		mockMvc.perform(get("/about")).andExpect(status().isOk());
+	}	
+	@Test
+	public void registerTest() throws Exception {
+		mockMvc.perform(get("/register")).andExpect(status().isOk());
+	}
+	@Test
+	public void loginTest() throws Exception {
+		mockMvc.perform(get("/login")).andExpect(status().isOk());
+	}
+	@Test
+	public void carsTest() throws Exception {
+		mockMvc.perform(get("/cars")).andExpect(status().isOk());
+	}
+	@Test
+	public void maluchTest() throws Exception {
+		mockMvc.perform(get("/cars/maluch")).andExpect(status().isOk());
+	}
+	@Test
+	public void poldekTest() throws Exception {
+		mockMvc.perform(get("/cars/poldek")).andExpect(status().isOk());
+	}
+	@Test
+	public void ferrariTest() throws Exception {
+		mockMvc.perform(get("/cars/ferrari")).andExpect(status().isOk());
+	}
+	@Test
+	public void rentTest() throws Exception {
+		mockMvc.perform(get("/rentCar")).andExpect(status().isOk());
 	}
 }

@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -14,7 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,12 +28,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
+import pl.akdg.carrental.data.Clients;
+import pl.akdg.carrental.data.Rentals;
+import pl.akdg.carrental.dto.MyRentals;
 import pl.akdg.carrental.dto.RegisterForm;
+import pl.akdg.carrental.services.MyRentalServices;
 
 @Controller
 @RequestMapping("/")
 public class CarRentalController {
-
 	@RequestMapping(path="/about", method=RequestMethod.GET)
 	public String about() {
 		return "about";
@@ -124,10 +131,10 @@ public class CarRentalController {
 		return "home";
 	}*/
     @RequestMapping(path="/register",  method=RequestMethod.POST)
-   	public String register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   	public String register(HttpServletRequest request, HttpServletResponse response, Clients clients) throws ServletException, IOException {
     		String nick=request.getParameter("nick");
     		String password=request.getParameter("password");
-    	try {
+    	/*try {
    			Class.forName("org.hsqldb.jdbcDriver");
    			
    			Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:data/carrental", "sa", "");
@@ -149,7 +156,8 @@ public class CarRentalController {
    		} catch (SQLException e) {
    			// TODO Auto-generated catch block
    			e.printStackTrace();
-   		}
+   		}*/
+    	clients.insertClient(nick, password);
    		return "home";
    	}
 	@RequestMapping(path="/cars/maluch", method=RequestMethod.GET)
@@ -189,13 +197,18 @@ public class CarRentalController {
 		}
 	}*/
     @RequestMapping(path="/rentCar", method=RequestMethod.POST)
-	public String rentCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String payment=request.getParameter("payment");
+	public String rentCar(HttpServletRequest request, HttpServletResponse response, Rentals rentals) throws ServletException, IOException, NumberFormatException, ParseException {
+		String login=request.getParameter("login");
+    	String payment=request.getParameter("payment");
+		String rent_start=request.getParameter("rent_start");
+		String rent_return=request.getParameter("rent_return");
+		String car=request.getParameter("car");
 		if(payment.equals("przelewy24")) {
 			return "przelewy24";
 		}
 		else {
-			return "home";
+			rentals.insertRental(login, Integer.parseInt(car), rent_start, rent_return);
+			return "cash";
 		}
 	}
 	/*

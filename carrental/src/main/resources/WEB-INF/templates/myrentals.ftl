@@ -28,13 +28,16 @@ body {
   line-height: 60px;
   background-color: #f5f5f5;
 }
+
 .container {
   width: auto;
   padding: 0 15px;
 }
+
 .product-list-content {
     margin-top: 5rem;
 }
+
 .product-detail-content {
     margin-top: 5rem;
 }
@@ -73,19 +76,19 @@ body {
         </nav>
     </header>
     <div class="container">
-            <h1>LOGIN</h1>
-            <form class="col-md-6" action="/login" method="POST">
-                <div class="form-group">
-                    <label for="nickInput">Nickname</label>
-                    <input type="text" minlength=5 class="form-control" name="nick" placeholder="Enter nickname">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" minlength=5 class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">LOGIN</button>
-            </form>
-        </div>
+        <table>
+        	<#list myRentals as myRental>
+        		<tr>
+        			<td>MARKA: ${myRental.mark}</td>
+        			<td>MODEL: ${myRental.model}</td>
+        			<td>DATA WYPO¯YCZENIA: ${myRental.rental_date}</td>
+        			<td>DATA ZWROTU: ${myRental.return_date}</td>
+        			<td>CENA: ${myRental.price}</td>
+        		</tr>
+        	</#list>
+        </table>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <span class="text-muted">Car Rental App 2018-2019 &copy;.</span>
@@ -100,4 +103,4 @@ body {
         crossorigin="anonymous"></script>
 </body>
 
-</html> 
+</html>

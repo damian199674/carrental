@@ -73,17 +73,12 @@ body {
         </nav>
     </header>
     <div class="container">
-            <h1>LOGIN</h1>
-            <form class="col-md-6" action="/login" method="POST">
+            <h1>CHECK YOUR HISTORY!</h1>
+            <form class="col-md-6" action="/my" method="POST">
                 <div class="form-group">
                     <label for="nickInput">Nickname</label>
                     <input type="text" minlength=5 class="form-control" name="nick" placeholder="Enter nickname">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" minlength=5 class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <button type="submit" class="btn btn-primary">CHECK!</button>
             </form>
         </div>
     <footer class="footer">

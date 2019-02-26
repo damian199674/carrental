@@ -75,18 +75,28 @@ body {
     <div class="container">
             <h1>RENT OUR CAR</h1>
             <form class="col-md-6" action="/rentCar" method="POST">
+               <div class="form-group">
+                    <label for="nickInput">Nickname</label>
+                    <input type="text" minlength=5 class="form-control" name="login" placeholder="Enter nickname">
+                </div>
                 <div class="form-group">
                   <label for="start">Date of rent:</label>
-				  <input type="date" id="start" name="rent_start" value="2019-02-21" min="2019-02-21" max="2019-12-31">  
+				  <input type="date" id="start" name="rent_start" value="2019-02-26" min="2019-02-26" max="2019-12-31">  
                 </div>
                 <div class="form-group">
                   <label for="return">Date of return:</label>
-				  <input type="date" id="return" name="rent_return" value="2019-02-22" min="2019-02-22" max="2019-12-31">  
+				  <input type="date" id="return" name="rent_return" value="2019-02-27" min="2019-02-27" max="2019-12-31">  
                 </div>
                 <div class="form-group">
                  <label for="payment">Payment:</label>
                 <input type="radio" name="payment" value="przelewy24">przelewy24   
                 <input type="radio" name="payment" value="cash">cash
+                  </div>
+                  <div class="form-group">
+                <label for="car">Car:</label>
+                <input type="radio" name="car" value="3">maluch   
+                <input type="radio" name="car" value="2">polonez
+                 <input type="radio" name="car" value="1">ferrari   
                   </div>
                 <button type="submit" class="btn btn-primary">RENT</button>
             </form>
